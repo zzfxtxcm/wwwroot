@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wwwroot</title>
+  <mate charset="UTF-8">
+  <title>馨窝网www.xinwowang.com，本地化房产团购、电商门户</title>
+  <meta name="keywords" content="漳州房产,厦门房产，泉州房产，广州房产，深圳房产">
+  <meta name="description" content="馨窝网www.xinwowang.com：本地化房产团购、电商第一门户，最专业的房产信息网，致力于打造信息最新最全的房地产网站。">
+  <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

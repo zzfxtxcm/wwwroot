@@ -3,11 +3,19 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+gem 'bootstrap-sass', '2.3.2'
+gem 'haml', '4.0.5'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
+
+  gem 'net-ssh', '2.9.0'
+  gem 'capistrano', '3.1.0'
+  gem 'capistrano-rails', '1.1.1'
+  gem 'capistrano-bundler', '1.1.2'
+  gem 'capistrano-rvm', '0.1.1'
 end
 
 group :test do
@@ -39,6 +47,10 @@ gem 'spring',        group: :development
 
 group :production do
   gem 'pg', '0.15.1'
+
+  gem 'unicorn'
+  gem 'unicorn-rails'
+  gem 'unicorn-worker-killer'
 end
 
 # Use ActiveModel has_secure_password

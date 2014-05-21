@@ -1,0 +1,40 @@
+.container
+  .mt30{align: "center"}
+    %a{href: "www.xinwowang.com"}
+      = image_tag("xwlogo.gif")
+  .mt20{align: "center"}
+    %form.form-inline.m0{action: "http://zz.xinwowang.com/information", method: "get", name: "myform", role: "form"}
+      %input#keyword.form-control{name: "keyword", placeholder: "输入关键字", style: "width:355px;", type: "text"}/
+      %select{name: "station", style: "width: 100px"}
+        %option{value: "zz"} 漳州分站
+        %option{value: "sz"} 深圳分站
+        %option{value: "gz"} 广州分站
+        %option{value: "xm"} 厦门分站
+        %option{value: "qz"} 泉州分站
+      %select{name: "search_type", style: "width: 100px"}
+        %option{value: "new_homes"} 搜索楼盘
+        %option{value: "news"} 搜索资讯
+      %button.btn.btn-danger{type: "submit"} 搜索
+  .home_mu.mt50.mb20{align: "center"}
+    %span.mr20
+      %a.button.button-circle.button-flat{href: "http://gz.xinwowang.com", target: "_blank"} 广州站
+    %span.mr20
+      %a.button.button-circle.button-flat-primary{href: "http://sz.xinwowang.com", target: "_blank"} 深圳站
+    %span.mr20
+      %a.button.button-circle.button-flat-action{href: "http://xm.xinwowang.com", target: "_blank"} 厦门站
+    %span.mr20
+      %a.button.button-circle.button-flat-highlight{href: "http://zz.xinwowang.com", target: "_blank"} 漳州站
+    %span.mr20
+      %a.button.button-circle.button-flat-caution{href: "http://qz.xinwowang.com", target: "_blank"} 泉州站
+  .container.mt100.mb20{style: " border-bottom:1px solid #CCC"}
+  .text-center.projectList.pb5
+    %a{href: "http://zz.xinwowang.com/about#about", target: "_blank"} 关于馨窝
+    |
+    %a{href: "http://zz.xinwowang.com/about#con", target: "_blank"} 联系我们
+    |
+    %a{href: "http://zz.xinwowang.com/about#join", target: "_blank"} 招聘信息
+    |
+    %a{href: "http://zz.xinwowang.com/about#law", target: "_blank"} 法律声明
+  .text-center
+    ©2014  三岁  版权所有
+    %a{href: "http://www.miitbeian.gov.cn", target: "_blank"} 闽ICP备14006517号-2
