@@ -6,7 +6,7 @@ shared_root = "/home/wwwroot/www/shared"
 
 # Listen on fs socket for better performance
 listen "#{shared_root}/tmp/unicorn.sock", :backlog => 64
-listen 5596, :tcp_nopush => false
+listen 5000, :tcp_nopush => false
 
 # Nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
