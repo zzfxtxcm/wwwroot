@@ -1,11 +1,11 @@
 /*
 
 	GalleryView Stylesheet
-	
+
 	Use the CSS rules below to modify the look of your gallery.
-	
+
 	To create additional rules, use the markup below as a guide to GalleryView's architecture.
-	
+
 	<div class="gallery">
 		<div class="panel">
 			<img src="path/to/image.jpg" />
@@ -25,7 +25,7 @@
 			</li>
 		</ul>
 	</div>
-		
+
 
 */
 
@@ -79,10 +79,4 @@
 /* POINTER FOR CURRENT FRAME */
 .pointer {
 	border-color: #000;
-}
-
-/* TRANSPARENT BORDER FIX FOR IE6 */
-/* NOTE - DO NOT CHANGE THIS RULE */
-*html .pointer {
-	filter: chroma(color=pink);
 }
