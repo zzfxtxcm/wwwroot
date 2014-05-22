@@ -1,4 +1,4 @@
-worker_processes 1
+worker_processes 2
 
 APP_PATH = File.expand_path("../..", __FILE__)
 working_directory APP_PATH
