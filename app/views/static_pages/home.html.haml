@@ -38,3 +38,6 @@
   .text-center
     ©2014  三岁  版权所有
     %a{href: "http://www.miitbeian.gov.cn", target: "_blank"} 闽ICP备14006517号-2
+    - unless Rails.env.development?
+      %script{"data-turbolinks-eval" => "false", type: "text/javascript"}
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000442251'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1000442251%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
