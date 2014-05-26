@@ -1,25 +1,30 @@
 require "open-uri"
 require "json"
+require 'rufus-scheduler'
 
 class StaticPagesController < ApplicationController
   def home
-    sleep 5
+    scheduler = Rufus::Scheduler.new
+    scheduler.in '5s' do
 
-    url = "http://ip.taobao.com/service/getIpInfo.php?ip="
-    @ip_data = JSON(open("#{url}#{request.remote_ip}").gets)
-    @city = @ip_data["data"]["city"]
-    case @city
-      when "漳州市"
-        redirect_to "http://zz.xinwowang.com"
-      when "厦门市"
-        redirect_to "http://xm.xinwowang.com"
-      when "泉州市"
-        redirect_to "http://qz.xinwowang.com"
-      when "广州市"
-        redirect_to "http://gz.xinwowang.com"
-      when "深圳市"
-        redirect_to "http://sz.xinwowang.com"
+      url = "http://ip.taobao.com/service/getIpInfo.php?ip="
+      @ip_data = JSON(open("#{url}#{request.remote_ip}").gets)
+      @city = @ip_data["data"]["city"]
+      case @city
+        when "漳州市"
+          redirect_to "http://zz.xinwowang.com"
+        when "厦门市"
+          redirect_to "http://xm.xinwowang.com"
+        when "泉州市"
+          redirect_to "http://qz.xinwowang.com"
+        when "广州市"
+          redirect_to "http://gz.xinwowang.com"
+        when "深圳市"
+          redirect_to "http://sz.xinwowang.com"
+      end
+
     end
 
+    scheduler.join
   end
 end
