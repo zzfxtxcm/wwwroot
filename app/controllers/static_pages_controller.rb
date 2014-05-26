@@ -1,5 +1,6 @@
 require "open-uri"
 require "json"
+require 'rufus-scheduler'
 
 class StaticPagesController < ApplicationController
   def home
