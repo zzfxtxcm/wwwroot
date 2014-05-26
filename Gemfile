@@ -6,9 +6,6 @@ gem 'rails', '4.1.1'
 gem 'bootstrap-sass', '2.3.2'
 gem 'haml', '4.0.5'
 
-# 延迟
-gem 'rufus-scheduler'
-
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
