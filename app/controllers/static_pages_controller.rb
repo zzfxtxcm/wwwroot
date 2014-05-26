@@ -3,7 +3,8 @@ require "json"
 
 class StaticPagesController < ApplicationController
   def home
-
+    sleep 5
+    join_city
   end
 
   private
