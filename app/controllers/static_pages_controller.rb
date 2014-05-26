@@ -4,7 +4,6 @@ include StaticPagesHelper
 
 class StaticPagesController < ApplicationController
   def home
-    auto_redirect(:sec => '5', :url => "http://zz.xinwowang.com")
     join_city
   end
 
