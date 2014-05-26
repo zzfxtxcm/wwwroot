@@ -8,15 +8,15 @@ module ApplicationHelper
     city = ip_data["data"]["city"]
     case city
       when "漳州市"
-        "zz"
+        "http://zz.xinwowang.com"
       when "厦门市"
-        "xm"
+        "http://xm.xinwowang.com"
       when "泉州市"
-        "qz"
+        "http://qz.xinwowang.com"
       when "广州市"
-        "gz"
+        "http://gz.xinwowang.com"
       when "深圳市"
-        "sz"
+        "http://sz.xinwowang.com"
     end
   end
 end
