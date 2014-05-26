@@ -3,7 +3,7 @@ require "json"
 
 class StaticPagesController < ApplicationController
   def home
-
+    join_city
   end
 
   private
