@@ -13,14 +13,19 @@ class StaticPagesController < ApplicationController
       @city = @ip_data["data"]["city"]
       case @city
         when "漳州市"
+          sleep 5
           redirect_to "http://zz.xinwowang.com"
         when "厦门市"
+          sleep 5
           redirect_to "http://xm.xinwowang.com"
         when "泉州市"
+          sleep 5
           redirect_to "http://qz.xinwowang.com"
         when "广州市"
+          sleep 5
           redirect_to "http://gz.xinwowang.com"
         when "深圳市"
+          sleep 5
           redirect_to "http://sz.xinwowang.com"
       end
     end
