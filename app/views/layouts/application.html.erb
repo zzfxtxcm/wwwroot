@@ -1,6 +1,10 @@
+<% provide(:url, "http://#{join_city}.xinwowang.com") %>
 <!DOCTYPE html>
 <html>
 <head>
+  <% unless join_city.blank? %>
+    <meta http-equiv='refresh' content='5; url=<%= yield(:url) %>'>
+  <% end %>
   <mate charset="UTF-8">
   <title>馨窝网www.xinwowang.com，本地化房产团购、电商门户</title>
   <meta name="keywords" content="漳州房产,厦门房产，泉州房产，广州房产，深圳房产">
