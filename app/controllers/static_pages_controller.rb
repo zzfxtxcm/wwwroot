@@ -3,7 +3,6 @@ require "json"
 
 class StaticPagesController < ApplicationController
   def home
-    sleep 5
     join_city
   end
 
@@ -14,15 +13,15 @@ class StaticPagesController < ApplicationController
       @city = @ip_data["data"]["city"]
       case @city
         when "漳州市"
-          redirect_to "http://zz.xinwowang.com"
+          auto_redirect(:sec => '5', :url => "http://zz.xinwowang.com")
         when "厦门市"
-          redirect_to "http://xm.xinwowang.com"
+          auto_redirect(:sec => '5', :url => "http://xm.xinwowang.com")
         when "泉州市"
-          redirect_to "http://qz.xinwowang.com"
+          auto_redirect(:sec => '5', :url => "http://qz.xinwowang.com")
         when "广州市"
-          redirect_to "http://gz.xinwowang.com"
+          auto_redirect(:sec => '5', :url => "http://gz.xinwowang.com")
         when "深圳市"
-          redirect_to "http://sz.xinwowang.com"
+          auto_redirect(:sec => '5', :url => "http://sz.xinwowang.com")
       end
     end
 end
