@@ -24,5 +24,6 @@ class StaticPagesController < ApplicationController
 
     end
 
+    scheduler.join
   end
 end
