@@ -3,18 +3,11 @@
     %a{href: "www.xinwowang.com"}
       = image_tag("xwlogo.gif")
   .mt20{align: "center"}
-    %form.form-inline.m0{action: "http://zz.xinwowang.com/information", method: "get", name: "myform", role: "form"}
-      %input#keyword.form-control{name: "keyword", placeholder: "输入关键字", style: "width:355px;", type: "text"}/
-      %select{name: "station", style: "width: 100px"}
-        %option{value: "zz"} 漳州分站
-        %option{value: "sz"} 深圳分站
-        %option{value: "gz"} 广州分站
-        %option{value: "xm"} 厦门分站
-        %option{value: "qz"} 泉州分站
-      %select{name: "search_type", style: "width: 100px"}
-        %option{value: "new_homes"} 搜索楼盘
-        %option{value: "news"} 搜索资讯
-      %button.btn.btn-danger{type: "submit"} 搜索
+    = form_tag search_path, :method => :get, :class => "form-inline m0",name: "myform", :role => "form" do
+      = text_field_tag :keyword, params[:keyword], :class => "form-control", :id => "keyword", :style => "width: 525px", :placeholder => "请输入关键字"
+      %button.btn.btn-danger{ type: "submit" }
+        搜索
+
   .home_mu.mt50.mb20{align: "center"}
     %span.mr20
       %a.button.button-circle.button-flat{href: "http://gz.xinwowang.com", target: "_blank"} 广州站

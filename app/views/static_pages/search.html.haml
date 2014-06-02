@@ -1,0 +1,7 @@
+%ul
+  - @list.each do |item|
+    %li
+      = link_to item[0], "#{item[2]}", target: "_blank"
+      %br/
+      = item[1]
+= will_paginate @list

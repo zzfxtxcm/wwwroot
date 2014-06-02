@@ -6,10 +6,16 @@ gem 'rails', '4.1.1'
 gem 'bootstrap-sass', '2.3.2'
 gem 'haml', '4.0.5'
 
+# 分页
+gem 'will_paginate', '3.0.5'
+gem 'bootstrap-will_paginate', '0.0.10'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
+  gem 'pry-rails', '0.3.2'
+
 
   gem 'net-ssh', '2.9.0'
   gem 'capistrano', '3.1.0'
