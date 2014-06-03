@@ -1,10 +1,19 @@
-- if @list.blank?
-  搜索不到您想要的内容。
-- else
-  %ul
-    - @list.each do |item|
-      %li
-        = link_to item[0], "#{item[2]}", target: "_blank"
-        %br/
-        = item[1]
-= will_paginate @list
+.container
+  %h1
+    = image_tag("logo.png")
+  .ml10
+    = form_tag search_path, :method => :get, :class => "form-inline m0",name: "myform", :role => "form" do
+      = text_field_tag :keyword, params[:keyword], :class => "form-control", :id => "keyword", :style => "width: 525px", :placeholder => "请输入关键字"
+      %button.btn.btn-danger{ type: "submit" }
+        搜索
+  .mt20
+    - if @list.blank?
+      搜索不到您想要的内容。
+    - else
+      %ul
+        - @list.each do |search_item|
+          %li
+            = link_to search_item[0], "#{search_item[2]}", target: "_blank"
+            %br/
+            = search_item[1]
+      = will_paginate @list

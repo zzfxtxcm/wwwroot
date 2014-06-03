@@ -37,7 +37,7 @@ class StaticPagesController < ApplicationController
 
       url.each do |item|
         @list << [
-                  item["name"] ? item["name"] : item["title"],
+                  item["name"] ||= item["title"],
                   item["description"],
                   "#{city_lnk}/#{model_name}/#{item["id"]}"
                  ]
