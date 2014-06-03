@@ -13,6 +13,7 @@ class StaticPagesController < ApplicationController
     @qz = "http://qz.xinwowang.com"
     @gz = "http://gz.xinwowang.com"
     @sz = "http://sz.xinwowang.com"
+
     # new_homes
     [@zz, @xm, @qz, @gz, @sz].each do |city|
       city_list = JSON.parse(open(URI.escape("#{city}/new_homes.json?keyword=#{keyword}&per_page=100")).read)
@@ -39,8 +40,25 @@ class StaticPagesController < ApplicationController
         @list << [
                   item["name"] || item["title"],
                   item["description"] || strip_tags(item["content"]).first(60),
-                  "#{city_lnk}/#{model_name}/#{item["id"]}"
+                  "#{city_lnk}/#{model_name}/#{item["id"]}",
+                  "#{get_city_name(city_lnk)}",
+                  "#{city_lnk}"
                  ]
+      end
+    end
+
+    def get_city_name(city_lnk)
+      case city_lnk
+      when @zz
+        "漳州"
+      when @xm
+        "厦门"
+      when @qz
+        "泉州"
+      when @gz
+        "广州"
+      when @sz
+        "深圳"
       end
     end
 end
