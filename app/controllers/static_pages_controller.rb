@@ -1,4 +1,5 @@
 require 'will_paginate/array'
+include ActionView::Helpers::SanitizeHelper
 
 class StaticPagesController < ApplicationController
   def home
@@ -37,7 +38,7 @@ class StaticPagesController < ApplicationController
       url.map do |item|
         @list << [
                   item["name"] || item["title"],
-                  item["description"],
+                  item["description"] || strip_tags(item["content"]).first(60),
                   "#{city_lnk}/#{model_name}/#{item["id"]}"
                  ]
       end
