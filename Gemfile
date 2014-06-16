@@ -10,6 +10,16 @@ gem 'haml', '4.0.5'
 gem 'will_paginate', '3.0.5'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+# 会员
+gem 'devise', '3.2.4'
+gem 'devise-encryptable', '0.1.2'
+
+# 后台页面
+gem 'activeadmin',         github: 'gregbell/active_admin'
+gem 'ransack',             github: 'ernie/ransack'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'formtastic',          github: 'justinfrench/formtastic'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
