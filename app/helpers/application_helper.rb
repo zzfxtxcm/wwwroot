@@ -4,7 +4,8 @@ require "json"
 module ApplicationHelper
   def join_city
     url = "http://ip.taobao.com/service/getIpInfo.php?ip="
-    city = JSON(open("#{url}#{request.remote_ip}").gets)["data"]["city"]
+    ip = request.headers['X-Real-IP'] || request.remote_ip
+    city = JSON(open("#{url}#{ip}").gets)["data"]["city"]
     case city
       when "漳州市"
         "http://zz.xinwowang.com"
