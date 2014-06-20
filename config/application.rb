@@ -38,9 +38,9 @@ module Wwwroot
     I18n.default_locale = "zh-CN".to_sym
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    config.assets.precompile += Ckeditor.assets
-    config.assets.precompile += %w(ckeditor/*)
+    # config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    # config.assets.precompile += Ckeditor.assets
+    # config.assets.precompile += %w(ckeditor/*)
 
     # config.assets.precompile << Proc.new do |path|
     #   if path =~ /\.(css||scss|js|coffee)\z/
