@@ -20,7 +20,7 @@ set :linked_files, %w{config/database.yml config.ru}
 #
 # dirs we want symlinking to shared
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets}
+set :linked_dirs, %w{bin log public/uploads tmp/pids tmp/cache tmp/sockets}
 
 set :keep_releases, 5
 
