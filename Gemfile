@@ -20,6 +20,16 @@ gem 'ransack',             github: 'ernie/ransack'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
+# 编辑器
+gem 'ckeditor', '4.0.10'
+
+# 图片上传
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.7.0'
+
+# Api
+gem 'grape', '0.7.0'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

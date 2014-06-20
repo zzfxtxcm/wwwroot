@@ -18,6 +18,7 @@ module Wwwroot
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.autoload_paths += %W(#{config.root}/app/api)
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -37,6 +38,9 @@ module Wwwroot
     I18n.default_locale = "zh-CN".to_sym
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w(ckeditor/*)
 
     config.assets.precompile << Proc.new do |path|
       if path =~ /\.(css||scss|js|coffee)\z/

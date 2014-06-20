@@ -1,0 +1,23 @@
+zh-CN:
+  active_admin:
+    admin_users: # 管理员
+      menu:
+        admin_user: "管理员"
+    information: # 信息
+      title: "信息管理"
+      menu:
+        information: "信息"
+      list:
+        title: "标题"
+        source: "来源"
+      form:
+        title: "标题"
+        information_thumb: "缩略图"
+        source: "来源"
+        keywords: "关键词"
+        description: "描述"
+        content: "内容"
+      search:
+        title: "标题"
+        source: "来源"
+        created_at: "创建时间"

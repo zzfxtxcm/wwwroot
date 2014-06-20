@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'api'
+
   root to: 'static_pages#home'
 
   match '/search', to: 'static_pages#search', via: 'get'
@@ -6,6 +8,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+
+  mount Ckeditor::Engine => '/ckeditor'
+
+  mount Wwwroot::API => "/"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
