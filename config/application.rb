@@ -37,7 +37,6 @@ module Wwwroot
 
     I18n.default_locale = "zh-CN".to_sym
 
-    config.assets.enabled = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets
