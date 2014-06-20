@@ -112,7 +112,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
-    ckeditor (4.0.10)
+    ckeditor (4.0.11)
       mime-types
       orm_adapter (~> 0.5.0)
     coderay (1.1.0)
@@ -318,7 +318,7 @@ DEPENDENCIES
   capistrano-rvm (= 0.1.1)
   capybara (= 2.1.0)
   carrierwave (= 0.10.0)
-  ckeditor (= 4.0.10)
+  ckeditor (= 4.0.11)
   coffee-rails (~> 4.0.0)
   devise (= 3.2.4)
   devise-encryptable (= 0.1.2)
