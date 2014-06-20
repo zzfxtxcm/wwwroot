@@ -1,2 +1,3 @@
 #= require active_admin/base
-#= require ckeditor/ckeditor
+#= require_self
+#= require ckeditor/init
