@@ -15,6 +15,12 @@
 /log/*.log
 /tmp
 
+# carrierwave
+/public/uploads/**/*
+
+# assets
+/public/assets/**/*
+
 # Ignore other unneeded files.
 database.yml
 doc/

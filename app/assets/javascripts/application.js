@@ -15,3 +15,4 @@
 //= require turbolinks
 
 //= require ckeditor/ckeditor
+//= require ckeditor/override
