@@ -20,7 +20,7 @@ class CreateInformationTypes < ActiveRecord::Migration
       InformationType.create!(name: '首页-楼盘活动')
     end
   end
-  
+
   def change
     create_table :information_types do |t|
       t.string :name

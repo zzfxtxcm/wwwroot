@@ -62,17 +62,16 @@ ActiveAdmin.register Information do
   end
 
   controller do
-    def selected_values
-      object.send(method).try(:compact).map(&:to_i) || []
-    end
-    def information_type
-      self.information_type_id ? true : nil
-    end
 
     def permitted_params
-      params[:information][:information_type_id] = params[:information][:information_type_id].join(',')
+      begin
+        params[:information][:information_type_id] = params[:information][:information_type_id].join(',')
+      rescue NoMethodError
+        nil
+      end
       params.permit!
     end
+
   end
 
 end
