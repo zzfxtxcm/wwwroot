@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620095539) do
+ActiveRecord::Schema.define(version: 20140623090708) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 20140620095539) do
     t.text     "content"
     t.integer  "status"
     t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "information_type_id"
+  end
+
+  add_index "information", ["information_type_id"], name: "index_information_on_information_type_id"
+
+  create_table "information_types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

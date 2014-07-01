@@ -16,8 +16,6 @@ ActiveAdmin.register Information do
 
   menu :label => proc{ I18n.t("active_admin.information.menu.information") }
 
-  permit_params :title, :source, :keywords, :description, :content
-
   index :title => proc{ I18n.t("active_admin.information.title") } do
     selectable_column
     id_column
@@ -34,10 +32,21 @@ ActiveAdmin.register Information do
 
   form do |f|
     f.inputs "" do
+      f.form_buffers.last << javascript_tag("
+        $(document).ready(function() {
+          var informationType = \"#{f.object.information_type_id}\".replace(/(.)(?=[^$])/g,\"$1,\").split(\",\")
+
+          for (var i = 0; i <= informationType.length; i++) {
+            $(\"#information_information_type_id_\" + informationType[i]).prop(\"checked\", true);
+          };
+        });
+      ")
+      f.input :information_type,
+              :as => :check_boxes,
+              :multiple => true,
+              :label => I18n.t("active_admin.information.form.information_type")
       f.input :title,
               :label => I18n.t("active_admin.information.form.title")
-      # f.input :information_thumb,
-      #         :label => I18n.t("active_admin.information.form.information_thumb")
       f.input :source,
               :label => I18n.t("active_admin.information.form.source")
       f.input :keywords,
@@ -50,6 +59,20 @@ ActiveAdmin.register Information do
               :as => :ckeditor
     end
     f.actions
+  end
+
+  controller do
+    def selected_values
+      object.send(method).try(:compact).map(&:to_i) || []
+    end
+    def information_type
+      self.information_type_id ? true : nil
+    end
+
+    def permitted_params
+      params[:information][:information_type_id] = params[:information][:information_type_id].join(',')
+      params.permit!
+    end
   end
 
 end

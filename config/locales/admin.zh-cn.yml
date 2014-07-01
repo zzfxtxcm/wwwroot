@@ -11,6 +11,7 @@ zh-CN:
         title: "标题"
         source: "来源"
       form:
+        information_type: "前台位置"
         title: "标题"
         information_thumb: "缩略图"
         source: "来源"
